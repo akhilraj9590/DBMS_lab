@@ -1,0 +1,15 @@
+create table customer (license_no int, name varchar(15)not null, address varchar(20) not null, age int not null , phone int not null, constraint license_PK primary key (license_no));
+
+
+create table vehicle(reg_no int, make varchar(15) not null , yom int(4) not null, cc int not null,sc int not null, constraint reg_no_pk primary key (reg_no));
+
+
+
+create table owns(license_no int ,reg_no varchar(10),primary key (reg_no), foreign key (license_no) references customer(license_no), foreign key(reg_no) references vehicle(reg_no) );
+
+create table policy (policy_no int , reg_no varchar(10), license_no int , issue_date date not null ,value int not null ,policy_amt int not null , mode varchar(15) not null , foreign key (license_no) references customer(license_no), foreign key(reg_no) references vehicle(reg_no), primary key (policy_no));
+
+create table accident (claim_no int, location varchar(15) not null, doa date not null, primary key (claim_no));
+
+
+create table participated (license_no int,reg_no varchar(10), claim_no int , amt int , foreign key (license_no) references customer (license_no), foreign key (reg_no) references vehicle (reg_no) ,  foreign key (claim_no) references accident (claim_no), primary key (claim_no));
