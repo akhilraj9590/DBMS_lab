@@ -57,6 +57,7 @@ insert into customer values(102,'Jeorge','mumbai',20,'9747881122');
 insert into customer values(103,'ibrahim','kasargod',65,'8187551122');
 insert into customer values(104,'Roy','nadapuram',45,'9747551100');
 insert into customer values(105,'Abel','calicut',30,'9747785455');
+
 --
 -- Dumping data for table <vehicle>
 --
