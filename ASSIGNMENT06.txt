@@ -65,7 +65,6 @@ db.order.find({'items.pno':"P2"})
 db.order.find({'items.quantity':{$lt:13}})
 
 
-db.order.find({'items.quantity':{$lt:14}})
 
 
 
