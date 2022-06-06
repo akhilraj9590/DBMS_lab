@@ -48,4 +48,24 @@ db.order.insert({order_no:"O5",year:2020,paid:"Y",cost:{price:19,currency:"INR"}
 db.order.find({paid:"Y"}).pretty()
 
 
+db.order.find({year:{$lt:2019},paid:"Y"})
+
+
+db.order.find({$or:[{year:{$lt:2019}},{paid:"N"}]})
+
+
+db.order.find({'cost.currency':"INR"})
+
+db.order.find({'cost.price':{$lt:18},'cost.currency':"INR"})
+
+
+db.order.find({'items.pno':"P2"})
+
+
+db.order.find({'items.quantity':{$lt:13}})
+
+
+db.order.find({'items.quantity':{$lt:14}})
+
+
 
